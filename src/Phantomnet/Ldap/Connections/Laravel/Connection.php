@@ -414,7 +414,11 @@ class Connection implements ConnectionInterface
         
 
         $results = ldap_count_entries($this->ldapConnection, $result);
-
+        
+	if(empty($results)) {
+           throw new UserNotFoundException();
+        }
+        
         $entries = ldap_get_entries($this->ldapConnection, $result);
 
         return $entries;
