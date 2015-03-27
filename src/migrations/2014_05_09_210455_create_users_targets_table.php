@@ -48,6 +48,6 @@ class CreateUsersTargetsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExsists('users_targets');
+		Schema::dropIfExists('users_targets');
 	}
 }
